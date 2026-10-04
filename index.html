@@ -1,0 +1,1825 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BLACK-PANTHER Classes | Learn Beyond Textbook</title>
+
+<meta name="description"
+content="BLACK-PANTHER Classes — Nursery to Class 3. Study, games, practical learning, festivals, activities and much more.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   BLACK-PANTHER
+   BLACK + WHITE + PURPLE
+===================================================== */
+
+:root{
+    --black:#050505;
+    --black2:#0b080f;
+    --white:#ffffff;
+    --grey:#b9b5c2;
+    --purple:#9b5cff;
+    --purple2:#c084fc;
+    --purple-dark:#5b21b6;
+    --glass:rgba(255,255,255,.055);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    color:var(--white);
+    background:
+        radial-gradient(circle at 10% 10%,rgba(155,92,255,.18),transparent 28%),
+        radial-gradient(circle at 90% 40%,rgba(91,33,182,.16),transparent 30%),
+        radial-gradient(circle at 40% 90%,rgba(192,132,252,.10),transparent 25%),
+        var(--black);
+    overflow-x:hidden;
+}
+
+h1,h2,h3,.logo{
+    font-family:"Cinzel",serif;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+section{
+    padding:100px 7%;
+    position:relative;
+}
+
+/* =====================================================
+   TEXTURE
+===================================================== */
+
+.texture{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:9999;
+    opacity:.035;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            white 0px,
+            transparent 1px,
+            transparent 4px
+        );
+}
+
+/* =====================================================
+   FLOATING PURPLE LIGHTS
+===================================================== */
+
+.orbs span{
+    position:fixed;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:var(--purple);
+    filter:blur(15px);
+    opacity:.35;
+    z-index:-1;
+    animation:float 12s infinite ease-in-out;
+}
+
+.orbs span:nth-child(1){
+    left:8%;
+    top:20%;
+}
+
+.orbs span:nth-child(2){
+    left:85%;
+    top:15%;
+    animation-delay:2s;
+}
+
+.orbs span:nth-child(3){
+    left:50%;
+    top:70%;
+    animation-delay:4s;
+}
+
+.orbs span:nth-child(4){
+    left:20%;
+    top:80%;
+    animation-delay:6s;
+}
+
+.orbs span:nth-child(5){
+    left:75%;
+    top:75%;
+    animation-delay:8s;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0) scale(1);
+    }
+
+    50%{
+        transform:translateY(-100px) scale(1.5);
+    }
+
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    padding:18px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(5,5,5,.82);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(155,92,255,.25);
+}
+
+.logo{
+    font-size:23px;
+    letter-spacing:3px;
+}
+
+.logo span{
+    color:var(--purple);
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
+    font-size:14px;
+    color:#ddd;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--purple2);
+    text-shadow:0 0 15px var(--purple);
+}
+
+.menu{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.58),
+            rgba(5,2,10,.9)
+        ),
+        url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=2000&q=90");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:1000px;
+    animation:heroIn 1.4s ease;
+}
+
+@keyframes heroIn{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.badge{
+    display:inline-block;
+
+    padding:10px 22px;
+    margin-bottom:22px;
+
+    border:1px solid var(--purple);
+    border-radius:30px;
+
+    color:var(--purple2);
+    background:rgba(155,92,255,.08);
+
+    box-shadow:0 0 25px rgba(155,92,255,.15);
+}
+
+.hero h1{
+    font-size:clamp(45px,9vw,105px);
+    letter-spacing:8px;
+
+    text-shadow:
+        0 0 10px var(--purple),
+        0 0 35px var(--purple-dark);
+}
+
+.hero h1 span{
+    color:var(--purple);
+}
+
+.hero h2{
+    font-size:clamp(22px,4vw,38px);
+    margin:10px;
+    letter-spacing:5px;
+}
+
+.hero p{
+    max-width:750px;
+    margin:20px auto;
+
+    color:#ddd;
+    line-height:1.8;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:30px;
+}
+
+.btn{
+    padding:14px 28px;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple-dark)
+    );
+
+    border:1px solid var(--purple2);
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.03);
+
+    box-shadow:
+        0 0 30px rgba(155,92,255,.65);
+}
+
+.btn.dark{
+    background:rgba(255,255,255,.05);
+    border-color:#555;
+}
+
+/* =====================================================
+   TITLES
+===================================================== */
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title h2{
+    font-size:42px;
+}
+
+.section-title h2 span{
+    color:var(--purple2);
+}
+
+.section-title p{
+    color:var(--grey);
+    margin-top:12px;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.grid{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+}
+
+.card{
+    position:relative;
+    overflow:hidden;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(155,92,255,.045)
+        );
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    transition:.4s;
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    width:130px;
+    height:130px;
+
+    top:-60px;
+    right:-60px;
+
+    border-radius:50%;
+
+    background:var(--purple);
+
+    filter:blur(65px);
+
+    opacity:.15;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+
+    border-color:var(--purple);
+
+    box-shadow:
+        0 15px 50px rgba(155,92,255,.2);
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    font-size:21px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#bcb8c5;
+    line-height:1.7;
+}
+
+/* =====================================================
+   STUDENT IMAGE CARDS
+===================================================== */
+
+.student-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.student-card{
+    position:relative;
+    height:360px;
+    overflow:hidden;
+    border-radius:22px;
+
+    border:1px solid rgba(155,92,255,.35);
+
+    background:#111;
+}
+
+.student-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:.6s;
+}
+
+.student-card:hover img{
+    transform:scale(1.1);
+}
+
+.student-overlay{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
+
+    padding:28px;
+
+    background:
+        linear-gradient(
+            transparent 35%,
+            rgba(0,0,0,.9)
+        );
+}
+
+.student-overlay h3{
+    font-size:23px;
+}
+
+.student-overlay p{
+    color:#ddd;
+    margin-top:5px;
+}
+
+/* =====================================================
+   PRICING
+===================================================== */
+
+.price-card{
+    text-align:center;
+    border-color:rgba(155,92,255,.65);
+}
+
+.price{
+    font-size:52px;
+    font-weight:800;
+    color:var(--purple2);
+    margin:15px 0;
+}
+
+.price small{
+    color:#aaa;
+    font-size:14px;
+}
+
+/* =====================================================
+   OFFER
+===================================================== */
+
+.offer{
+    max-width:1000px;
+    margin:auto;
+
+    text-align:center;
+
+    padding:55px 25px;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #08050c,
+            #12091c,
+            #08050c
+        );
+
+    border:2px solid var(--purple);
+
+    animation:purplePulse 3s infinite;
+}
+
+.offer h2{
+    color:var(--purple2);
+    font-size:38px;
+}
+
+.offer h3{
+    margin-top:20px;
+    font-size:24px;
+}
+
+@keyframes purplePulse{
+
+    0%,100%{
+        box-shadow:0 0 20px rgba(155,92,255,.15);
+    }
+
+    50%{
+        box-shadow:0 0 65px rgba(155,92,255,.4);
+    }
+
+}
+
+/* =====================================================
+   LEARNING TIMELINE
+===================================================== */
+
+.timeline{
+    max-width:850px;
+    margin:auto;
+}
+
+.timeline-item{
+    display:flex;
+    gap:25px;
+    margin-bottom:25px;
+}
+
+.timeline-number{
+    min-width:52px;
+    height:52px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--purple-dark)
+        );
+
+    box-shadow:0 0 25px rgba(155,92,255,.35);
+
+    font-weight:800;
+}
+
+/* =====================================================
+   FESTIVALS
+===================================================== */
+
+.festival{
+    text-align:center;
+}
+
+.festival span{
+    display:inline-block;
+
+    padding:12px 18px;
+    margin:7px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    transition:.3s;
+}
+
+.festival span:hover{
+    background:var(--purple-dark);
+    border-color:var(--purple2);
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    box-shadow:0 0 20px rgba(155,92,255,.3);
+}
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery{
+    columns:3 250px;
+    column-gap:18px;
+}
+
+.gallery img{
+    width:100%;
+    display:block;
+
+    margin-bottom:18px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(155,92,255,.18);
+
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.025);
+
+    box-shadow:
+        0 10px 35px rgba(155,92,255,.25);
+}
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-box{
+    max-width:900px;
+    margin:auto;
+
+    text-align:center;
+
+    padding:55px 35px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.045);
+
+    border:1px solid rgba(155,92,255,.3);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.4);
+}
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+
+    margin-top:30px;
+}
+
+.contact-btn{
+    padding:15px 25px;
+
+    border-radius:12px;
+
+    background:#0c0c0c;
+
+    border:1px solid #333;
+
+    transition:.3s;
+}
+
+.contact-btn:hover{
+    transform:translateY(-4px);
+
+    border-color:var(--purple);
+
+    box-shadow:
+        0 0 25px rgba(155,92,255,.25);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    padding:40px 7%;
+
+    text-align:center;
+
+    background:#020202;
+
+    border-top:
+        1px solid rgba(155,92,255,.2);
+}
+
+.footer-brand{
+    font-family:"Cinzel",serif;
+    font-size:23px;
+    letter-spacing:2px;
+}
+
+footer p{
+    color:#777;
+    margin:8px;
+}
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:750px){
+
+    .nav-links{
+        position:absolute;
+
+        top:70px;
+        left:0;
+
+        width:100%;
+
+        display:none;
+        flex-direction:column;
+
+        padding:25px;
+
+        text-align:center;
+
+        background:#050505;
+
+        border-bottom:1px solid var(--purple);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    section{
+        padding:75px 5%;
+    }
+
+    .hero h1{
+        letter-spacing:4px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .contact-box{
+        padding:35px 20px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="texture"></div>
+
+<!-- FLOATING PURPLE LIGHTS -->
+
+<div class="orbs">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <div class="logo">
+        BLACK<span>-</span>PANTHER
+    </div>
+
+    <div class="menu" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <div class="nav-links" id="navLinks">
+
+        <a href="#home">Home</a>
+        <a href="#students">Students</a>
+        <a href="#classes">Classes</a>
+        <a href="#learning">Learning</a>
+        <a href="#activities">Activities</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✦ LEARNING BEYOND TEXTBOOK ✦
+        </div>
+
+        <h1>
+            BLACK<span>-</span>PANTHER
+        </h1>
+
+        <h2>CLASSES</h2>
+
+        <p>
+            Study. Explore. Play. Create.
+            A friendly place where children learn,
+            discover new skills and create wonderful memories.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#classes" class="btn">
+                Explore Classes
+            </a>
+
+            <a href="#contact" class="btn dark">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STUDENT SECTION
+===================================================== -->
+
+<section id="students">
+
+    <div class="section-title reveal">
+
+        <h2>
+            HAPPY <span>LEARNERS</span>
+        </h2>
+
+        <p>
+            Every child has curiosity. We help them turn it into knowledge.
+        </p>
+
+    </div>
+
+
+    <div class="student-grid">
+
+        <div class="student-card reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=90"
+            alt="Students learning in classroom">
+
+            <div class="student-overlay">
+
+                <h3>📚 Learn Together</h3>
+
+                <p>
+                    Friendly classroom learning.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="student-card reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=90"
+            alt="Children studying">
+
+            <div class="student-overlay">
+
+                <h3>🧠 Think & Discover</h3>
+
+                <p>
+                    Questions lead to better understanding.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="student-card reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=90"
+            alt="Students in school">
+
+            <div class="student-overlay">
+
+                <h3>🎒 School Spirit</h3>
+
+                <p>
+                    Learning with confidence and joy.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="student-card reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=90"
+            alt="Children playing">
+
+            <div class="student-overlay">
+
+                <h3>🎮 Learn & Play</h3>
+
+                <p>
+                    Fun activities and teamwork.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section>
+
+    <div class="section-title reveal">
+
+        <h2>
+            MORE THAN <span>CLASSES</span>
+        </h2>
+
+        <p>
+            Education with activities, creativity and experiences.
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card reveal">
+
+            <div class="icon">📚</div>
+
+            <h3>Focused Study</h3>
+
+            <p>
+                Concept-based teaching, regular tests and
+                attention towards every student.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">🧪</div>
+
+            <h3>Practical Learning</h3>
+
+            <p>
+                Practical activities help students connect
+                classroom concepts with real life.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">🎮</div>
+
+            <h3>Games</h3>
+
+            <p>
+                Children can enjoy different indoor and
+                outdoor games and activities.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">🚀</div>
+
+            <h3>Future Ready</h3>
+
+            <p>
+                We encourage curiosity, creativity,
+                confidence and real-world knowledge.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CLASSES
+===================================================== -->
+
+<section id="classes">
+
+    <div class="section-title reveal">
+
+        <h2>
+            OUR <span>CLASSES</span>
+        </h2>
+
+        <p>
+            Simple fees with a strong learning environment.
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card price-card reveal">
+
+            <div class="icon">🧒</div>
+
+            <h3>Nursery to Senior</h3>
+
+            <div class="price">
+                ₹50
+                <small>/ month</small>
+            </div>
+
+            <p>
+                Fun learning, basic concepts,
+                activities and child-friendly education.
+            </p>
+
+        </div>
+
+
+        <div class="card price-card reveal">
+
+            <div class="icon">🎒</div>
+
+            <h3>Class 1 to 3</h3>
+
+            <div class="price">
+                ₹100
+                <small>/ month</small>
+            </div>
+
+            <p>
+                Strong foundations, regular practice,
+                activities and concept-based learning.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OFFER
+===================================================== -->
+
+<section>
+
+    <div class="offer reveal">
+
+        <h2>
+            🎁 FIRST DAY SPECIAL
+        </h2>
+
+        <p>
+            Start your learning journey with BLACK-PANTHER!
+        </p>
+
+        <h3>
+            ✏️ FIRST DAY → FREE PENCIL
+        </h3>
+
+        <p>
+            A little gift for a big beginning.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LEARNING
+===================================================== -->
+
+<section id="learning">
+
+    <div class="section-title reveal">
+
+        <h2>
+            LEARNING <span>BEYOND TEXTBOOK</span>
+        </h2>
+
+        <p>
+            Education doesn't stop when the textbook closes.
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-number">
+                01
+            </div>
+
+            <div class="card">
+
+                <h3>📖 Regular Tests</h3>
+
+                <p>
+                    Regular tests help students understand
+                    their progress and improve continuously.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-number">
+                02
+            </div>
+
+            <div class="card">
+
+                <h3>🧪 Practical Activities</h3>
+
+                <p>
+                    Practical activities are conducted so
+                    students can understand concepts through experience.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-number">
+                03
+            </div>
+
+            <div class="card">
+
+                <h3>🚌 Picnic Plans</h3>
+
+                <p>
+                    Educational and fun picnic plans give
+                    children memorable experiences outside class.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-number">
+                04
+            </div>
+
+            <div class="card">
+
+                <h3>🎨 Creative Activities</h3>
+
+                <p>
+                    Drawing, social activities, games and
+                    celebrations encourage creativity.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ACTIVITIES
+===================================================== -->
+
+<section id="activities">
+
+    <div class="section-title reveal">
+
+        <h2>
+            FUN + <span>LEARNING</span>
+        </h2>
+
+        <p>
+            Because learning can be exciting.
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card reveal">
+
+            <div class="icon">⚽</div>
+
+            <h3>Games</h3>
+
+            <p>
+                Different games, teamwork and enjoyable
+                activities for children.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">🎨</div>
+
+            <h3>Drawing</h3>
+
+            <p>
+                Creative drawing activities encourage
+                imagination and expression.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">🎤</div>
+
+            <h3>Confidence</h3>
+
+            <p>
+                Speaking and participation activities
+                help students express themselves.
+            </p>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="icon">🌎</div>
+
+            <h3>Real World Learning</h3>
+
+            <p>
+                Observation, activities and experiences
+                connect learning with everyday life.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FESTIVALS
+===================================================== -->
+
+<section>
+
+    <div class="section-title reveal">
+
+        <h2>
+            FESTIVALS & <span>CELEBRATIONS</span>
+        </h2>
+
+        <p>
+            Learn together. Celebrate together. Make memories together.
+        </p>
+
+    </div>
+
+
+    <div class="festival reveal">
+
+        <span>🪔 Diwali</span>
+        <span>🎨 Holi</span>
+        <span>🪷 Ganesh Chaturthi</span>
+        <span>🌸 Navratri</span>
+        <span>🎄 Christmas</span>
+        <span>🇮🇳 Independence Day</span>
+        <span>🇮🇳 Republic Day</span>
+        <span>🎂 Children's Day</span>
+        <span>🪁 Makar Sankranti</span>
+        <span>🎉 Janmashtami</span>
+        <span>💜 Raksha Bandhan</span>
+        <span>✨ Special Activities</span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BEAUTIFUL POSTERS
+===================================================== -->
+
+<section>
+
+    <div class="section-title reveal">
+
+        <h2>
+            STUDY <span>POSTERS</span>
+        </h2>
+
+        <p>
+            Positive messages for young learners.
+        </p>
+
+    </div>
+
+
+    <div class="student-grid">
+
+        <div class="student-card reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=90"
+            alt="Students learning">
+
+            <div class="student-overlay">
+
+                <h3>📚 Study Smart</h3>
+
+                <p>
+                    Small steps every day.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="student-card reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=90"
+            alt="Students together">
+
+            <div class="student-overlay">
+
+                <h3>🤝 Learn Together</h3>
+
+                <p>
+                    Friends make learning memorable.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="student-card reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=900&q=90"
+            alt="Student reading">
+
+            <div class="student-overlay">
+
+                <h3>📖 Keep Learning</h3>
+
+                <p>
+                    Curiosity creates knowledge.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="student-card reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1504159506876-f8338247a14a?auto=format&fit=crop&w=900&q=90"
+            alt="Students enjoying activities">
+
+            <div class="student-overlay">
+
+                <h3>🌟 Enjoy Learning</h3>
+
+                <p>
+                    Learn. Play. Explore.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section id="gallery">
+
+    <div class="section-title reveal">
+
+        <h2>
+            CLASS <span>MOMENTS</span>
+        </h2>
+
+        <p>
+            Learning • Friendship • Activities • Memories
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <img
+        src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=90"
+        alt="Students in classroom">
+
+        <img
+        src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=90"
+        alt="Children in school">
+
+        <img
+        src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=90"
+        alt="Children playing">
+
+        <img
+        src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=90"
+        alt="Classroom students">
+
+        <img
+        src="https://images.unsplash.com/photo-1560785496-3c9d27877182?auto=format&fit=crop&w=900&q=90"
+        alt="Children learning">
+
+        <img
+        src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=90"
+        alt="Students studying">
+
+        <img
+        src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=90"
+        alt="Students at school">
+
+        <img
+        src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=90"
+        alt="Students together">
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     VALUES
+===================================================== -->
+
+<section>
+
+    <div class="section-title reveal">
+
+        <h2>
+            BLACK-PANTHER <span>VALUES</span>
+        </h2>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card reveal">
+            <h3>📖 Education</h3>
+            <p>Build a strong academic foundation.</p>
+        </div>
+
+        <div class="card reveal">
+            <h3>🧠 Knowledge</h3>
+            <p>Think, question and understand.</p>
+        </div>
+
+        <div class="card reveal">
+            <h3>🎯 Discipline</h3>
+            <p>Regular effort creates progress.</p>
+        </div>
+
+        <div class="card reveal">
+            <h3>🤝 Friendship</h3>
+            <p>Learn and grow together.</p>
+        </div>
+
+        <div class="card reveal">
+            <h3>🎮 Play</h3>
+            <p>Healthy fun and teamwork.</p>
+        </div>
+
+        <div class="card reveal">
+            <h3>🚀 Future</h3>
+            <p>Prepare children for tomorrow.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+    <div class="contact-box reveal">
+
+        <div class="section-title">
+
+            <h2>
+                CONTACT <span>US</span>
+            </h2>
+
+            <p>
+                Click an option below to contact BLACK-PANTHER Classes.
+            </p>
+
+        </div>
+
+
+        <p>
+            📍 Saaydri Nagar, Padmeshwari Niwas Chawl,
+            Santosh Bhuvan, Valai Pada Road
+        </p>
+
+        <br>
+
+        <p>
+            👑 Owner: <b>Kartik Mandal</b>
+        </p>
+
+        <p>
+            🎓 Principal: <b>Karan Mandal</b>
+        </p>
+
+
+        <div class="contact-buttons">
+
+            <!-- WhatsApp -->
+
+            <a
+            class="contact-btn"
+            href="https://wa.me/917977448593?text=Hello%20BLACK-PANTHER%20Classes%2C%20I%20want%20to%20know%20more%20about%20the%20classes."
+            target="_blank">
+
+                💬 WhatsApp
+
+            </a>
+
+
+            <!-- PHONE -->
+
+            <a
+            class="contact-btn"
+            href="tel:+917977448593">
+
+                📞 Call Us
+
+            </a>
+
+
+            <!-- EMAIL -->
+
+            <a
+            class="contact-btn"
+            href="mailto:karanmandal1303@gmail.com?subject=BLACK-PANTHER%20Classes%20Enquiry">
+
+                ✉️ Gmail
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-brand">
+        BLACK-PANTHER CLASSES
+    </div>
+
+    <p>
+        Learn • Grow • Play • Achieve
+    </p>
+
+    <p>
+        Since 2021 • Learning Beyond Textbook
+    </p>
+
+    <p>
+        © 2026 BLACK-PANTHER Classes
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList.toggle("active");
+
+}
+
+
+/* CLOSE MENU */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+    link.addEventListener("click",() => {
+
+        document
+        .getElementById("navLinks")
+        .classList.remove("active");
+
+    });
+
+});
+
+
+/* SCROLL REVEAL */
+
+const observer =
+new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.12
+    }
+
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+/* PURPLE CLICK SPARK */
+
+document.addEventListener("click",event => {
+
+    const spark =
+    document.createElement("span");
+
+    spark.style.position="fixed";
+    spark.style.left=event.clientX+"px";
+    spark.style.top=event.clientY+"px";
+
+    spark.style.width="8px";
+    spark.style.height="8px";
+
+    spark.style.borderRadius="50%";
+
+    spark.style.background="#a855f7";
+
+    spark.style.boxShadow=
+        "0 0 20px #a855f7";
+
+    spark.style.pointerEvents="none";
+    spark.style.zIndex="10000";
+
+    document.body.appendChild(spark);
+
+    spark.animate(
+
+        [
+            {
+                transform:"scale(1)",
+                opacity:1
+            },
+
+            {
+                transform:"scale(8)",
+                opacity:0
+            }
+        ],
+
+        {
+            duration:500
+        }
+
+    );
+
+    setTimeout(
+        () => spark.remove(),
+        500
+    );
+
+});
+
+</script>
+
+</body>
+</html>
+```
